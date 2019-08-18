@@ -5,5 +5,12 @@ public class test {
         for (int i = 0; i < 5; i++){
             System.out.println(i);
         }
+
+        int a = 10;
+
+        for (int j = 0; j < a; j++){
+            System.out.println(j);
+        }
     };
 }
+
