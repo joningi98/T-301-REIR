@@ -12,4 +12,5 @@ public class BL_tester {
         else                    return mid;
     }
 
+    int[] a = new int[10];
 }
