@@ -1,7 +1,4 @@
-import edu.princeton.cs.algs4.In;
-import edu.princeton.cs.algs4.StdIn;
-import edu.princeton.cs.algs4.StdOut;
-import edu.princeton.cs.algs4.StdRandom;
+import edu.princeton.cs.algs4.*;
 
 import java.util.Arrays;
 
@@ -9,7 +6,14 @@ public class BL_tester{
 
     private BL_tester() {}
 
-    public static int indexOf(int[] a, int key){
+    private static int linear_search(int[] a, int key){
+        for (int i = 0; i < a.length - 1; i++){
+            if (a[i] == key) return a[i];
+        }
+        return -1;
+    }
+
+    private static int indexOf(int[] a, int key){
         int lo = 0;
         int hi = a.length - 1;
         while (lo <= hi) {
@@ -21,10 +25,6 @@ public class BL_tester{
         return -1;
     }
 
-    public static int rank(int key, int[] a){
-        return indexOf(a, key);
-    }
-
     private static int[] my_array(int n){
         int[] arr = new int[n];
         for (int i = 0; i < n; i++){
@@ -33,25 +33,34 @@ public class BL_tester{
         return arr;
     }
 
-    private static int[] search_nums(int n){
-        int[] arr = new int[n];
-        for (int i = 0; i < n; i++){
-            arr[i] = StdRandom.uniform(n);
-        }
-        return arr;
+    private static Stopwatch time(){
+        return new Stopwatch();
     }
 
     public static void main(String[] args){
 
-        int N = StdIn.readInt();
-        int[] my_arr = my_array(N);
-        int[] search_numbers = search_nums(N);
+        int n = StdIn.readInt();
+        int[] my_arr = my_array(n);
+        int[] search_numbers = my_array(n);
 
         Arrays.sort(my_arr);
 
-        for(int i = 0; i < search_numbers.length - 1; i++){
+        Stopwatch stopwatch = time();
 
+        for (int i = 0; i < search_numbers.length - 1; i++){
+            BL_tester.indexOf(my_arr, search_numbers[i]);
         }
+        double time_1 = stopwatch.elapsedTime();
+        StdOut.println("Binary search time: " + time_1);
+
+        Stopwatch stopwatch1 = time();
+
+        for (int i = 0; i < search_numbers.length - 1; i++){
+            linear_search(my_arr, search_numbers[i]);
+        }
+
+        double time_2 = stopwatch1.elapsedTime();
+        StdOut.println("Linear search: " + time_2);
     }
 
 }
