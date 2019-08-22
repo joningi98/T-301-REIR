@@ -51,7 +51,7 @@ public class BL_tester{
             BL_tester.indexOf(my_arr, search_numbers[i]);
         }
         double time_1 = stopwatch.elapsedTime();
-        StdOut.println("Binary search time: " + time_1);
+
 
         Stopwatch stopwatch1 = time();
 
@@ -60,7 +60,11 @@ public class BL_tester{
         }
 
         double time_2 = stopwatch1.elapsedTime();
+
+        StdOut.println("Numbers of searches: " + n);
+        StdOut.println("Binary search time: " + time_1);
         StdOut.println("Linear search: " + time_2);
+
     }
 
 }
