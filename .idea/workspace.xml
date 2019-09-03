@@ -2,8 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="190b52c7-6f5e-41fe-ab6b-b7c35a19b749" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/Percolation.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/S1/InteractivePercolationVisualizer.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/S1/PercolationVisualizer.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Percolation.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/S1/Percolation.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -36,7 +38,10 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/src/algs4.jar!/" />
+    <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.path.for.package.eslint" value="project" />
     <property name="node.js.path.for.package.tslint" value="project" />
+    <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
@@ -44,6 +49,7 @@
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Jón Ingi\Documents\GitHub\T-301-REIR\src\S1" />
       <recent name="C:\Users\Jón Ingi\Documents\GitHub\T-301-REIR\src" />
     </key>
   </component>
@@ -59,10 +65,36 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Application.PP">
+  <component name="RunManager" selected="Application.InteractivePercolationVisualizer">
+    <configuration name="InteractivePercolationVisualizer" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="S1.InteractivePercolationVisualizer" />
+      <module name="T-301-REIR" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="S1.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="PP" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="PP" />
       <module name="T-301-REIR" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="PercolationVisualizer" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="S1.PercolationVisualizer" />
+      <module name="T-301-REIR" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="S1.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -76,6 +108,8 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.InteractivePercolationVisualizer" />
+        <item itemvalue="Application.PercolationVisualizer" />
         <item itemvalue="Application.PP" />
         <item itemvalue="Application.test" />
       </list>
@@ -92,10 +126,25 @@
       <option name="presentableId" value="Default" />
       <updated>1565804587852</updated>
       <workItem from="1565804592520" duration="555000" />
+      <workItem from="1567427426992" duration="305000" />
+      <workItem from="1567520348272" duration="3580000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
 </project>
