@@ -1,9 +1,6 @@
 package S1;
 
-import edu.princeton.cs.algs4.StdDraw;
-import edu.princeton.cs.algs4.StdOut;
-import edu.princeton.cs.algs4.StdRandom;
-import edu.princeton.cs.algs4.StdStats;
+import edu.princeton.cs.algs4.*;
 
 public class PercolationStats {
     public PercolationStats(int N, int T) { // perform T independent experiments on an N-by-N grid
@@ -51,7 +48,10 @@ public class PercolationStats {
     }
 
     public static void main(String[] args){
-        new PercolationStats(200, 100);
+        Stopwatch stopwatch = new Stopwatch();
+        new PercolationStats(200, 1600);
+        double time_1 = stopwatch.elapsedTime();
+        StdOut.println(time_1);
 
 
     }
