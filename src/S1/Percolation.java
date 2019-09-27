@@ -1,6 +1,7 @@
 package S1;
 import edu.princeton.cs.algs4.QuickUnionUF;
 import edu.princeton.cs.algs4.StdOut;
+import edu.princeton.cs.algs4.WeightedQuickUnionUF;
 
 public class Percolation {
 
@@ -8,7 +9,7 @@ public class Percolation {
     private int top;
     private int bot;
     private int count;
-    private QuickUnionUF UF;
+    private WeightedQuickUnionUF UF;
     private int gridSize;
     private boolean perculate = false;
     private int[] info;
@@ -17,7 +18,7 @@ public class Percolation {
         if (N <= 0){
             throw new java.lang.IllegalArgumentException();
         }
-        UF = new QuickUnionUF(N*N+2);
+        UF = new WeightedQuickUnionUF(N*N+2);
         count = 0;
         top = N*N;
         bot = N*N + 1;
