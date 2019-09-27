@@ -2,9 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="190b52c7-6f5e-41fe-ab6b-b7c35a19b749" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/D4/FrequencyCounter.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/D4/Tale_of_two_cities.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/T-301-REIR/S1/Percolation.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/T-301-REIR/S1/Percolation.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/S1/Percolation.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/S1/Percolation.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/T-301-REIR/S1/PercolationStats.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/T-301-REIR/S1/PercolationStats.class" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -65,7 +67,49 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Application.InteractivePercolationVisualizer">
+  <component name="RunManager" selected="Application.FrequencyCounter">
+    <configuration name="FrequencyCounter (1)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="edu.princeton.cs.algs4.FrequencyCounter" />
+      <module name="T-301-REIR" />
+      <option name="PROGRAM_PARAMETERS" value="7 &lt; Tale_of_two_cities.txt" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="edu.princeton.cs.algs4.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="FrequencyCounter (2)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="edu.princeton.cs.algs4.FrequencyCounter" />
+      <option name="PROGRAM_PARAMETERS" value=" &lt; 7 j" />
+      <option name="REDIRECT_INPUT" value="true" />
+      <option name="INPUT_FILE" value="$PROJECT_DIR$/src/D4/Tale_of_two_cities.txt" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="edu.princeton.cs.algs4.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="FrequencyCounter" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="D4.FrequencyCounter" />
+      <module name="T-301-REIR" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="D4.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="InteractivePercolationVisualizer" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="S1.InteractivePercolationVisualizer" />
       <module name="T-301-REIR" />
@@ -75,13 +119,6 @@
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="PP" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="PP" />
-      <module name="T-301-REIR" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -99,19 +136,13 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="test" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="test" />
-      <module name="T-301-REIR" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.FrequencyCounter" />
+        <item itemvalue="Application.FrequencyCounter (2)" />
+        <item itemvalue="Application.FrequencyCounter (1)" />
         <item itemvalue="Application.InteractivePercolationVisualizer" />
         <item itemvalue="Application.PercolationVisualizer" />
-        <item itemvalue="Application.PP" />
-        <item itemvalue="Application.test" />
       </list>
     </recent_temporary>
   </component>
@@ -129,6 +160,7 @@
       <workItem from="1567427426992" duration="305000" />
       <workItem from="1567520348272" duration="3580000" />
       <workItem from="1567533427136" duration="7898000" />
+      <workItem from="1569618892723" duration="3005000" />
     </task>
     <servers />
   </component>
@@ -147,5 +179,16 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>jar://$PROJECT_DIR$/src/algs4.jar!/edu/princeton/cs/algs4/FrequencyCounter.java</url>
+          <line>40</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>
