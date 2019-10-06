@@ -26,15 +26,19 @@ public class FrequencyCounter {
         // compute frequency counts
         while (!StdIn.isEmpty()) {
             String key = StdIn.readString();
-            if (key.charAt(0) == 'j' || key.charAt(0) != 'J') StdOut.println(key);
-            if (key.length() < minlen) continue;
-            words++;
-            if (st.contains(key)) {
-                st.put(key, st.get(key) + 1);
-            }
-            else {
-                st.put(key, 1);
-                distinct++;
+            key = key.toLowerCase();
+            if (key.charAt(0) == 'j'){
+                key = key.replaceAll("[^a-zA-Z]", "");
+                StdOut.println(key);
+                if (key.length() < minlen) continue;
+                words++;
+                if (st.contains(key)) {
+                    st.put(key, st.get(key) + 1);
+                }
+                else {
+                    st.put(key, 1);
+                    distinct++;
+                }
             }
         }
 

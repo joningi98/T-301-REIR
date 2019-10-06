@@ -2,11 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="190b52c7-6f5e-41fe-ab6b-b7c35a19b749" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/D4/FrequencyCounter.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/D4/Tale_of_two_cities.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/D4/BST.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/D4/test.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/T-301-REIR/S1/Percolation.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/T-301-REIR/S1/Percolation.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/T-301-REIR/S1/PercolationStats.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/T-301-REIR/S1/PercolationStats.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/T-301-REIR/D4/FrequencyCounter.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/T-301-REIR/D4/FrequencyCounter.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/D4/FrequencyCounter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/D4/FrequencyCounter.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -38,7 +38,7 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/S1" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
     <property name="node.js.path.for.package.tslint" value="project" />
@@ -157,7 +157,6 @@
         <item itemvalue="Application.FrequencyCounter" />
         <item itemvalue="Application.FrequencyCounter (2)" />
         <item itemvalue="Application.FrequencyCounter (1)" />
-        <item itemvalue="Application.InteractivePercolationVisualizer" />
         <item itemvalue="Application.PercolationVisualizer" />
       </list>
     </recent_temporary>
@@ -177,6 +176,8 @@
       <workItem from="1567520348272" duration="3580000" />
       <workItem from="1567533427136" duration="7898000" />
       <workItem from="1569618892723" duration="3005000" />
+      <workItem from="1569790156517" duration="1830000" />
+      <workItem from="1569936843098" duration="7031000" />
     </task>
     <servers />
   </component>
