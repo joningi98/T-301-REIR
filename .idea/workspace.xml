@@ -2,12 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="190b52c7-6f5e-41fe-ab6b-b7c35a19b749" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/S3/PointSET.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/S3/input100K.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/S3/KdTree.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/T-301-REIR/D4/FrequencyCounter.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/T-301-REIR/D4/FrequencyCounter.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/T-301-REIR/S1/Percolation.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/T-301-REIR/S1/Percolation.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/T-301-REIR/S1/PercolationStats.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/T-301-REIR/S1/PercolationStats.class" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -73,7 +69,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Application.PointSET">
+  <component name="RunManager" selected="Application.KdTree">
     <configuration name="FrequencyCounter (1)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="edu.princeton.cs.algs4.FrequencyCounter" />
       <module name="T-301-REIR" />
@@ -116,12 +112,12 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="PercolationVisualizer" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="S1.PercolationVisualizer" />
+    <configuration name="KdTree" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="S3.KdTree" />
       <module name="T-301-REIR" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="S1.*" />
+          <option name="PATTERN" value="S3.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -157,11 +153,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.KdTree" />
         <item itemvalue="Application.PointSET" />
         <item itemvalue="Application.FrequencyCounter" />
         <item itemvalue="Application.FrequencyCounter (2)" />
         <item itemvalue="Application.FrequencyCounter (1)" />
-        <item itemvalue="Application.PercolationVisualizer" />
       </list>
     </recent_temporary>
   </component>
@@ -182,6 +178,7 @@
       <workItem from="1569618892723" duration="3005000" />
       <workItem from="1570299030311" duration="129000" />
       <workItem from="1570299234416" duration="9104000" />
+      <workItem from="1570371338859" duration="5220000" />
     </task>
     <servers />
   </component>
