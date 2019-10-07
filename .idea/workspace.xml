@@ -2,11 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="190b52c7-6f5e-41fe-ab6b-b7c35a19b749" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/D4/BST.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/D4/test.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/T-301-REIR/D4/FrequencyCounter.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/T-301-REIR/D4/FrequencyCounter.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/D4/FrequencyCounter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/D4/FrequencyCounter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/D4/BST.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/S3/KdTree.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/S3/KdTree.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -70,7 +68,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Application.FrequencyCounter">
+  <component name="RunManager" selected="Application.KdTree">
     <configuration name="FrequencyCounter (1)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="edu.princeton.cs.algs4.FrequencyCounter" />
       <module name="T-301-REIR" />
@@ -113,12 +111,12 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="PercolationStats" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="S1.PercolationStats" />
+    <configuration name="KdTree" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="S3.KdTree" />
       <module name="T-301-REIR" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="S1.*" />
+          <option name="PATTERN" value="S3.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -154,6 +152,7 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.KdTree" />
         <item itemvalue="Application.FrequencyCounter" />
         <item itemvalue="Application.FrequencyCounter (2)" />
         <item itemvalue="Application.FrequencyCounter (1)" />
@@ -204,6 +203,14 @@
           <url>jar://$PROJECT_DIR$/src/algs4.jar!/edu/princeton/cs/algs4/FrequencyCounter.java</url>
           <line>40</line>
           <option name="timeStamp" value="1" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/src/S3/KdTree.java</url>
+          <line>210</line>
+          <properties class="S3.KdTree" method="main">
+            <option name="EMULATED" value="true" />
+          </properties>
+          <option name="timeStamp" value="8" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
