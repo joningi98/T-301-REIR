@@ -5,6 +5,7 @@ import edu.princeton.cs.algs4.*;
 import java.awt.*;
 import java.util.List;
 import java.util.Set;
+import java.util.Stack;
 
 public class KdTree {
 
@@ -91,29 +92,17 @@ public class KdTree {
         if (node.vertical){
             if (node.p.x() < next_node.x()){
                 xmax = next_node.x();
-                ymax = next_node.y();
-                xmin = node.p.x();
-                ymin = node.p.y();
             }
             else{
-                xmax = node.p.x();
-                ymax = node.p.y();
                 xmin = next_node.x();
-                ymin = next_node.y();
             }
         }
         if (!node.vertical){
             if (node.p.y() < next_node.y()){
                 ymax = next_node.y();
-                xmax = next_node.x();
-                ymin = node.p.y();
-                xmin = node.p.x();
             }
             else{
-                ymax = node.p.y();
-                xmax = node.p.x();
                 ymin = next_node.y();
-                xmin = next_node.x();
             }
         }
         return new RectHV(xmin, ymin, xmax, ymax);
@@ -191,9 +180,24 @@ public class KdTree {
 
     // all points in the set that are inside the rectangle
     public Iterable<Point2D> range(RectHV rect) {
-        SET<Point2D> range_set;
-        range_set = new SET<Point2D>();
-        return range_set;
+        Stack<Point2D> my_stack;
+        my_stack = new Stack<>();
+        return range_helper(root, rect, my_stack);
+    }
+
+    private static Stack<Point2D> range_helper(Node node, RectHV rect, Stack<Point2D> my_stack){
+        if (rect.intersects(node.rect)){
+            if (rect.contains(node.p)){
+                my_stack.push(node.p);
+            }
+        }
+        if (node.left != null){
+            range_helper(node.left, rect, my_stack);
+        }
+        if (node.right != null){
+            range_helper(node.right, rect, my_stack);
+        }
+        return my_stack;
     }
 
 
@@ -220,7 +224,7 @@ public class KdTree {
             my_tree.insert(p);
         }
         StdOut.println(my_tree.contains(new Point2D(0.7, 0.2)));
-        SET<Point2D> my_set = (SET<Point2D>) my_tree.range(new RectHV(0.0,0.0, 0.4, 0.5));
+        Iterable<Point2D> my_set = my_tree.range(new RectHV(0.0, 0.0, 1.0, 1.0));
         StdOut.println(my_set);
     }
 }

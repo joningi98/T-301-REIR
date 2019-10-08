@@ -3,7 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="190b52c7-6f5e-41fe-ab6b-b7c35a19b749" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/D4/BST.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/S3/KdTree.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/S3/KdTree.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -203,14 +202,6 @@
           <url>jar://$PROJECT_DIR$/src/algs4.jar!/edu/princeton/cs/algs4/FrequencyCounter.java</url>
           <line>40</line>
           <option name="timeStamp" value="1" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-method">
-          <url>file://$PROJECT_DIR$/src/S3/KdTree.java</url>
-          <line>210</line>
-          <properties class="S3.KdTree" method="main">
-            <option name="EMULATED" value="true" />
-          </properties>
-          <option name="timeStamp" value="8" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
