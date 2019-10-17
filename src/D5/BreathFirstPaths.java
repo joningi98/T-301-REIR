@@ -136,20 +136,24 @@ class BreadthFirstPaths {
      * @return {@code true} if there is a path, and {@code false} otherwise
      * @throws IllegalArgumentException unless {@code 0 <= v < V}
      */
-    private int count = 0;
-    public int nrOfPathsTo(Digraph G, int v) {
+
+    public int nrOfPathsTo(Digraph G, int v, int count) {
         marked[v] = true;
-        LinkedList<Integer> marked_points = new LinkedList<Integer>();
-        LinkedList<Integer> marked_points = new LinkedList<Integer>();
-        for (int w : G.adj(v)){
-            if (G.V() == w){
-                count++;
-            }
-            if (!marked[w]){
-                nrOfPathsTo(G, w);
+        if (v == G.V())
+        {
+            count++;
+        }
+        else
+        {
+            for(int w : G.adj(v)) {
+                if (!marked[w])
+                {
+                    count = nrOfPathsTo(G,w, count);
+                }
             }
         }
-        validateVertex(v);
+
+        marked[v] = false;
         return count;
     }
 
@@ -175,7 +179,7 @@ class BreadthFirstPaths {
      */
     public Iterable<Integer> pathTo(Digraph G,int v) {
         validateVertex(v);
-        if (nrOfPathsTo(G, v) == 0) return null;
+        if (nrOfPathsTo(G, v,0) == 0) return null;
         Stack<Integer> path = new Stack<Integer>();
         int x;
         for (x = v; distTo[x] != 0; x = edgeTo[x])
@@ -198,13 +202,13 @@ class BreadthFirstPaths {
         // provided v is reachable from s
         for (int v = 0; v < G.V(); v++) {
             for (int w : G.adj(v)) {
-                if (nrOfPathsTo(G, v) != nrOfPathsTo(G, w)) {
+                if (nrOfPathsTo(G, v, 0) != nrOfPathsTo(G, w,0)) {
                     StdOut.println("edge " + v + "-" + w);
-                    StdOut.println("nrOfPathsTo(" + v + ") = " + nrOfPathsTo(G, v));
-                    StdOut.println("nrOfPathsTo(" + w + ") = " + nrOfPathsTo(G, w));
+                    StdOut.println("nrOfPathsTo(" + v + ") = " + nrOfPathsTo(G, v,0));
+                    StdOut.println("nrOfPathsTo(" + w + ") = " + nrOfPathsTo(G, w,0));
                     return false;
                 }
-                if (nrOfPathsTo(G, v) > 0 && (distTo[w] > distTo[v] + 1)) {
+                if (nrOfPathsTo(G, v,0) > 0 && (distTo[w] > distTo[v] + 1)) {
                     StdOut.println("edge " + v + "-" + w);
                     StdOut.println("distTo[" + v + "] = " + distTo[v]);
                     StdOut.println("distTo[" + w + "] = " + distTo[w]);
@@ -216,7 +220,7 @@ class BreadthFirstPaths {
         // check that v = edgeTo[w] satisfies distTo[w] = distTo[v] + 1
         // provided v is reachable from s
         for (int w = 0; w < G.V(); w++) {
-            if (nrOfPathsTo(G, w) <= 0 || w == s) continue;
+            if (nrOfPathsTo(G, w, 0) <= 0 || w == s) continue;
             int v = edgeTo[w];
             if (distTo[w] != distTo[v] + 1) {
                 StdOut.println("shortest path edge " + v + "-" + w);
@@ -263,7 +267,7 @@ class BreadthFirstPaths {
         BreadthFirstPaths bfs = new BreadthFirstPaths(G, s);
 
         for (int v = 0; v < G.V(); v++) {
-            if (bfs.nrOfPathsTo(G, v) > 0) {
+            if (bfs.nrOfPathsTo(G, v, 0) > 0) {
                 StdOut.printf("%d to %d (%d):  ", s, v, bfs.distTo(v));
                 for (int x : bfs.pathTo(G, v)) {
                     if (x == s) StdOut.print(x);
