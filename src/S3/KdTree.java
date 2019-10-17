@@ -3,11 +3,13 @@ package S3;
 import edu.princeton.cs.algs4.*;
 
 import java.awt.*;
-import java.util.Stack;
+import java.util.Arrays;
+import edu.princeton.cs.algs4.Stack;
+import edu.princeton.cs.algs4.RectHV;
 
 public class KdTree {
 
-    private int size_of_tree = 0;
+    private int size_of_tree;
     private Node root;
 
     private static class Node{
@@ -25,120 +27,106 @@ public class KdTree {
         }
     }
 
+    public KdTree() {
+        size_of_tree = 0;
+        root = null;
+    }
+
     public boolean isEmpty() {
-        return root == null;
+        return this.root == null;
     }
 
     // number of points in the set
     public int size() {
-        return size_of_tree;
+        return this.size_of_tree;
     }
 
     // add the point p to the set (if it is not already in the set )
     public void insert(Point2D p) {
-        size_of_tree++;
-        if (isEmpty()){
+        if (isEmpty()){ // If the tree is empty the we make the root
             RectHV rect = new RectHV(0.0, 0.0, 1.0, 1.0);
-            root = new Node(p,null, null, true, rect);
+            this.size_of_tree ++;
+            this.root = new Node(p,null, null, true, rect);
         }
-        else{
-            root = insert_helper(root, p, true);
+        if (!contains(p)){ // is the tree does not contain the point then we insert it
+            this.root = insert_helper(this.root, p, true);
         }
     }
 
     private Node insert_helper(Node node, Point2D new_node, boolean vertical){
-        if (vertical){
-            if (new_node.x() < node.p.x()){
+        // Here we go through the tree recursively
+        if (vertical) { // If the node is vertical the we look at the X coords
+            if (new_node.x() < node.p.x()) {
                 if (node.left == null){
-                    RectHV rect = get_rect(node, new_node);
-                    node.left = new Node(new_node, null, null, !vertical, rect);
+                    node.left = create_node(new_node, node.rect.xmin(), node.rect.ymin(), node.p.x(), node.rect.ymax());
                 }
-                node.left = insert_helper(node.left, new_node, !vertical);
+                else { // We go deeper in the deeper in the
+                    insert_helper(node.left, new_node, false);
+                }
             }
-            if (new_node.x() > node.p.x()){
+            if (new_node.x() >= node.p.x()) {
                 if (node.right == null){
-                    RectHV rect = get_rect(node, new_node);
-                    node.right = new Node(new_node, null, null, !vertical, rect);
+                    node.right = create_node(new_node, node.p.x(), node.rect.ymin(), node.rect.xmax(), node.rect.ymax());
                 }
-                node.right = insert_helper(node.right, new_node, !vertical);
+                else{ // We go deeper in the deeper in the
+                    insert_helper(node.right, new_node, false);
+                }
             }
         }
-        if (!vertical){
-            if (new_node.y() < node.p.y()){
+        else{ // If the node is horizontal the we look at the Y coords
+            if (new_node.y() < node.p.y()) {
                 if (node.left == null){
-                    RectHV rect = get_rect(node, new_node);
-                    node.left = new Node(new_node, null, null, !vertical, rect);
+                    node.left = create_node(new_node, node.rect.xmin(), node.rect.ymin(), node.rect.xmax(), node.p.y());
                 }
-                node.left = insert_helper(node.left, new_node, !vertical);
+                else{ // We go deeper in the deeper in the
+                    insert_helper(node.left, new_node, true);
+                }
             }
-            if (new_node.y() > node.p.y()){
+            if (new_node.y() >= node.p.y()) {
                 if (node.right == null){
-                    RectHV rect = get_rect(node, new_node);
-                    node.right = new Node(new_node, null, null, !vertical, rect);
+                    node.right = create_node(new_node, node.rect.xmin(), node.p.y(), node.rect.xmax(), node.rect.ymax());
                 }
-                node.right = insert_helper(node.right, new_node, !vertical);
+                else{ // We go deeper in the deeper in the
+                    insert_helper(node.right, new_node, true);
+                }
             }
         }
         return node;
     }
 
-    private RectHV get_rect(Node old_node, Point2D next_node){
-        double xmin = 0.0;
-        double ymin = 0.0;
-        double xmax = 1.0;
-        double ymax = 1.0;
-        if (old_node.vertical){
-            if (old_node.p.x() <= next_node.x()){
-                xmin = old_node.p.x();
-                xmax = old_node.rect.xmax();
-            }
-            else{
-                xmax = old_node.p.x();
-                xmin = old_node.rect.xmin();
-            }
-            ymax = old_node.rect.ymax();
-            ymin = old_node.rect.ymin();
-        }
-        if (!old_node.vertical){
-            if (old_node.p.y() <= next_node.y()){
-                ymin = old_node.p.y();
-                ymax = old_node.rect.ymax();
-            }
-            else{
-                ymax = old_node.p.y();
-                ymin = old_node.rect.ymin();
-            }
-            xmax = old_node.rect.xmax();
-            xmin = old_node.rect.xmin();
-        }
-        return new RectHV(xmin, ymin, xmax, ymax);
+    private Node create_node(Point2D new_point, double xmin, double ymin, double xmax, double ymax){
+        // This function is just for making a node with a rectangle
+        RectHV rect = new RectHV(xmin, ymin, xmax, ymax);
+        this.size_of_tree ++;
+        return new Node(new_point,null, null, true, rect);
     }
 
     // does the set contain the point p?
     public boolean contains(Point2D p) {
-        return contains_helper(root, p, true);
+        // Almost the same as insert but we return true is the point is in the tree, else false
+        return contains_helper(this.root, p, true);
     }
 
     private static boolean contains_helper(Node node, Point2D target, boolean vertical){
         if (node == null){
             return false;
         }
-        if (node.p.x() == target.x() && node.p.y() == target.y()){
+        else if (node.p.equals(target)){
             return true;
         }
-        if (vertical){
-            if (target.x() < node.p.y()){
-                return contains_helper(node, target, false);
+        else if (vertical){
+            if (target.x() < node.p.x()){
+                return contains_helper(node.left, target, false);
             }
-            if (target.x() > node.p.x()){
+            else if (target.x() >= node.p.x()){
                 return contains_helper(node.right, target, false);
             }
         }
-        if (!vertical){
+        else {
             if (target.y() < node.p.y()){
-                return contains_helper(node, target, true);
+                return contains_helper(node.left, target, true);
             }
-            if (target.y() > node.p.y()){
+            else if (target.y() >= node.p.y()){
                 return contains_helper(node.right, target, true);
             }
         }
@@ -147,23 +135,20 @@ public class KdTree {
 
     // draw all of the points to standard draw
     public void draw() {
-        StdDraw.setPenRadius(0.02);
-        draw_helper(root,  true);
+        StdDraw.setPenRadius(0.01);
+        draw_helper(this.root,  true);
     }
 
     private void draw_helper(Node node, boolean vertical) {
         if (node != null) {
             if (vertical) { // Vertical line
-                StdDraw.setPenRadius(0.01);
                 StdDraw.setPenColor(Color.RED);
                 StdDraw.line(node.p.x(), node.rect.ymax(), node.p.x(), node.rect.ymin());
             }
             if (!vertical) { // Horizontal line
-                StdDraw.setPenRadius(0.01);
                 StdDraw.setPenColor(Color.BLUE);
                 StdDraw.line(node.rect.xmin(), node.p.y(), node.rect.xmax(), node.p.y());
             }
-            StdDraw.setPenRadius(0.02);
             StdDraw.setPenColor(Color.BLACK);
             StdDraw.point(node.p.x(), node.p.y());
             draw_helper(node.left, !vertical);
@@ -175,69 +160,48 @@ public class KdTree {
     public Iterable<Point2D> range(RectHV rect) {
         Stack<Point2D> my_stack;
         my_stack = new Stack<>();
-        return range_helper(root, rect, my_stack);
+        return range_helper(this.root, rect, my_stack);
     }
 
     private static Stack<Point2D> range_helper(Node node, RectHV rect, Stack<Point2D> my_stack){
-        if (rect.intersects(node.rect)){
-            if (rect.contains(node.p)){
-                my_stack.push(node.p);
-            }
+        // I use the rect much in this function to see if the nodes are in the rect we are looking for
+        if (node == null){
+            return my_stack; // return here if the node is null
         }
-        if (node.left != null){
-            range_helper(node.left, rect, my_stack);
+        if (!rect.intersects(node.rect)){ // there is no point in going further if the rect doest intersect with the node rect
+            return my_stack;
         }
-        if (node.right != null){
-            range_helper(node.right, rect, my_stack);
+        if (rect.contains(node.p)){ // if the node is in the rect we add it to our stack
+            my_stack.push(node.p);
         }
+        range_helper(node.left, rect, my_stack); // Go down the both subtrees
+        range_helper(node.right, rect, my_stack);
         return my_stack;
     }
 
     // a nearest neighbor in the set to p; null if set is empty
     public Point2D nearest(Point2D p) {
-        return nearest_helper(root, p, root.p);
+        return nearest_helper(this.root, p, this.root.p);
     }
 
     private Point2D nearest_helper(Node node, Point2D target, Point2D nearest_neighbor){
         if (node != null){
-            if (node.rect.contains(target)){
-                if (node.p.distanceSquaredTo(target) < nearest_neighbor.distanceSquaredTo(target)){
-                    nearest_neighbor = node.p;
-                    if (node.left.rect.contains(target)){
-                        nearest_neighbor = nearest_helper(node.left, target, nearest_neighbor);
-                    }
-                    if (node.right.rect.contains(target)){
-                        nearest_neighbor = nearest_helper(node.right, target, nearest_neighbor);
-                    }
-                }
+            // check if the nearest_neighbour is further away than the new node
+            // if so the we change the value of the nearest_neighbour
+            if (nearest_neighbor.distanceSquaredTo(target) > node.p.distanceSquaredTo(target)) {
+                nearest_neighbor = node.p;
+            }
+            // We need to check if the node is vertical or horizontal to see which order we
+            // go down the tree
+            if (node.vertical){
+                nearest_neighbor = nearest_helper(node.left, target, nearest_neighbor);
+                nearest_neighbor = nearest_helper(node.right, target, nearest_neighbor);
+            }
+            else{
+                nearest_neighbor = nearest_helper(node.right, target, nearest_neighbor);
+                nearest_neighbor = nearest_helper(node.left, target, nearest_neighbor);
             }
         }
         return nearest_neighbor;
-    }
-
-    public static Point2D randomPoint(){
-        double x = StdRandom.uniform(1);
-        double y = StdRandom.uniform(1);
-        return new Point2D(x,y);
-    }
-
-    public static void main(String[] args){
-        KdTree my_tree = new KdTree();
-
-        Point2D[] my_points = {new Point2D(0.7, 0.2),
-                               new Point2D(0.5, 0.4),
-                               new Point2D(0.2, 0.3),
-                               new Point2D(0.4, 0.7),
-                               new Point2D(0.9, 0.6)};
-
-        for(Point2D p: my_points){
-            my_tree.insert(p);
-        }
-        StdOut.println(my_tree.contains(new Point2D(0.7, 0.2)));
-        Iterable<Point2D> my_set = my_tree.range(new RectHV(0.0, 0.0, 1.0, 1.0));
-        Point2D nearest_point = my_tree.nearest(new Point2D(0.6, 0.2));
-        StdOut.println(nearest_point);
-        StdOut.println(my_set);
-        my_tree.draw();
     }
 }

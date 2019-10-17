@@ -75,19 +75,4 @@ public class PointSET {
         }
         return nearest_point;
     }
-
-    public static void main(String[] args) {
-
-        In in100k = new In("/Users/Jón Ingi Ólafsson/Documents/GitHub/T-301-REIR/src/S3/input100K.txt");
-        Out out = new Out();
-
-        // TESTING 100K
-        int countCalculations_100k = 0;
-        PointSET set100k = new PointSET();
-        for (int i = 0; !in100k.isEmpty(); i++) {
-            double x = in100k.readDouble(), y = in100k.readDouble();
-            set100k.insert(new Point2D(x, y));
-        }
-
-    }
 }
